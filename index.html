@@ -85,45 +85,6 @@
         ]
       ];
 
-      // for (let j = 0; j < playlist.length; j++) {
-      //   $('<h2>', {
-      //     class: 'example-header',
-      //     text: playlist[j]['header'] ? playlist[j]['header'] : '—'
-      //   })
-      //     .appendTo('.container-jouele-player')
-      //     .after(
-      //       '<div class="jouele-playlist" data-space-control="true"></div>'
-      //     );
-
-      //   for (let i = 0; i < playlist[j]['tracks'].length; i++) {
-      //     console.log(playlist[i]['tracks'][j]);
-      //     console.log('...');
-      //   }
-
-      //   // console.log(playlist[j]['tracks']);
-      // }
-
-      // $('<h2>', {
-      //   class: 'example-header',
-      //   text: playlist[i]['header'] ? playlist[i]['header'] : ''
-      // })
-      //   .appendTo('.container-jouele-player')
-      //   .after(
-      //     '<div class="jouele-playlist" data-space-control="true"></div>'
-      //   );
-      // for (let v = 0; v < $('.jouele-playlist').length; v++) {
-      //   $('.jouele-playlist').eq(v).text()
-      // }
-      // for (let j = 0; j < playlist[i]['tracks'].length; j++) {
-      //   console.log(playlist[i]['tracks'][j]['title']);
-      //   console.log('...');
-      // }
-      // console.log(playlist[i][1]['tracks']);
-      // for (let j = 0; j < playlist[j].length; j++) {
-      //   $('.jouele-playlist').eq(2);
-      //   console.log(playlist[i][j]['tracks']);
-      // }
-
       $.each(playlist, function(key, value) {
         $('<h2>', {
           class: 'example-header',
@@ -141,10 +102,6 @@
       			 </p>`
           );
         }
-      });
-
-      $('a').click(function(e) {
-        e.preventDefault();
       });
     </script>
   </body>
