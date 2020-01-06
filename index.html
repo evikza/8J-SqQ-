@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+    <!-- Include: Jquery.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container-jouele-player"></div>
+    <!-- Include Jouele files (JS, CSS) -->
+    <script src="jouele/jouele.min.js"></script>
+    <link href="jouele/jouele.min.css" rel="stylesheet" />
+    <!-- <script src="bundler.js"></script> -->
+
+    <script>
+      var playlist = [
+        [
+          {
+            header: 'Don Toliver',
+            tracks: [
+              {
+                mp3:
+                  'https://api.soundcloud.com/tracks/628515405/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                title: 'Don Toliver — No Idea',
+                loading:
+                  'https://api.soundcloud.com/tracks/628515405/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                duration: '2:33'
+              }
+            ]
+          }
+        ],
+        [
+          {
+            header: 'Brandyn Burnette',
+            tracks: [
+              {
+                mp3:
+                  'https://api.soundcloud.com/tracks/264437141/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                title: 'Brandyn Burnette – Karma',
+                loading:
+                  'https://api.soundcloud.com/tracks/264437141/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                duration: '3:38'
+              },
+              {
+                mp3:
+                  'https://api.soundcloud.com/tracks/240383156/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                title: 'Brandyn Burnette - Down',
+                loading:
+                  'https://api.soundcloud.com/tracks/240383156/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                duration: '2:52'
+              },
+              {
+                mp3:
+                  'https://api.soundcloud.com/tracks/262415177/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                title: 'Brandyn Burnette – Worship',
+                loading:
+                  'https://api.soundcloud.com/tracks/262415177/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                duration: '3:16'
+              }
+            ]
+          }
+        ],
+        [
+          {
+            header: 'Dakheeel',
+            tracks: [
+              {
+                mp3:
+                  'https://api.soundcloud.com/tracks/144117442/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                title: 'Dakheeel — Soledad',
+                loading:
+                  'https://api.soundcloud.com/tracks/144117442/stream?client_id=a6ab27deb1ac17aefab37bfe2e85e9b3',
+                duration: '4:07'
+              }
+            ]
+          }
+        ]
+      ];
+
+      // for (let j = 0; j < playlist.length; j++) {
+      //   $('<h2>', {
+      //     class: 'example-header',
+      //     text: playlist[j]['header'] ? playlist[j]['header'] : '—'
+      //   })
+      //     .appendTo('.container-jouele-player')
+      //     .after(
+      //       '<div class="jouele-playlist" data-space-control="true"></div>'
+      //     );
+
+      //   for (let i = 0; i < playlist[j]['tracks'].length; i++) {
+      //     console.log(playlist[i]['tracks'][j]);
+      //     console.log('...');
+      //   }
+
+      //   // console.log(playlist[j]['tracks']);
+      // }
+
+      // $('<h2>', {
+      //   class: 'example-header',
+      //   text: playlist[i]['header'] ? playlist[i]['header'] : ''
+      // })
+      //   .appendTo('.container-jouele-player')
+      //   .after(
+      //     '<div class="jouele-playlist" data-space-control="true"></div>'
+      //   );
+      // for (let v = 0; v < $('.jouele-playlist').length; v++) {
+      //   $('.jouele-playlist').eq(v).text()
+      // }
+      // for (let j = 0; j < playlist[i]['tracks'].length; j++) {
+      //   console.log(playlist[i]['tracks'][j]['title']);
+      //   console.log('...');
+      // }
+      // console.log(playlist[i][1]['tracks']);
+      // for (let j = 0; j < playlist[j].length; j++) {
+      //   $('.jouele-playlist').eq(2);
+      //   console.log(playlist[i][j]['tracks']);
+      // }
+
+      $.each(playlist, function(key, value) {
+        $('<h2>', {
+          class: 'example-header',
+          text: value[0]['header']
+        })
+          .appendTo('.container-jouele-player')
+          .after(
+            '<div class="jouele-playlist" data-space-control="true"></div>'
+          );
+
+        for (let j = 0; j < value[0]['tracks'].length; j++) {
+          $('.container-jouele-player').append(
+            `<p>
+      				<a href="${value[0]['tracks'][j]['mp3']}"class="jouele">${value[0]['tracks'][j]['title']}</a>
+      			 </p>`
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
