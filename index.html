@@ -85,17 +85,15 @@
 
         for (var j = 0; j < playlist[i]['tracks'].length; j++) {
           // console.log(playlist[i]['tracks'][j]['title'] + i)
-          $('.jouele-playlist')
-            .eq(i)
-            .append(
-              '<p><a href="' +
-                playlist[i]['tracks'][j]['mp3'] +
-                '"class="jouele" data-length="' +
-                playlist[i]['tracks'][j]['duration'] +
-                '">' +
-                playlist[i]['tracks'][j]['title'] +
-                '</a></p>'
-            );
+          $('.jouele-playlist:eq(' + [i] + ')').append(
+            '<p><a href="' +
+              playlist[i]['tracks'][j]['mp3'] +
+              '"class="jouele" data-length="' +
+              playlist[i]['tracks'][j]['duration'] +
+              '">' +
+              playlist[i]['tracks'][j]['title'] +
+              '</a></p>'
+          );
         }
       }
     </script>
