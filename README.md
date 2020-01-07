@@ -12,7 +12,7 @@
 Перед закрывающимся тегом `<body>` добавьте файлы для работы плеера:
 
 ```html
-<!— Include Jouele files (CSS, JS) —>
+<!-- Include Jouele files (CSS, JS) -->
 <link href="jouele/jouele.min.css" rel="stylesheet" />
 <script src="jouele/jouele.min.js"></script>
 ```
